@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKU pomocník</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PKU pomocník</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hlavní strana</a></li>
+                <li><a href="pridatJidlo.html">Přidat jídlo</a></li>
+                <li><a href="databaze.html">Databáze</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        
+        
+        <section id="home">
+            <h2>Aktuální hodnoty</h2>
+            
+            <p><canvas id="pieChart" width="200" height="200"></canvas></p>
+            <span id="aktualniphe"></span>
+            <p>Toto je moderní webová stránka laděná do oranžových barev.</p>
+        </section>
+        
+        <section id="about">
+            <h2>Dnešní jídelníček</h2>
+            <p>Jsme tým nadšených vývojářů, kteří tvoří moderní webové stránky.</p>
+        </section>
+        
+        <section id="services">
+            <h2>Naše služby</h2>
+            <p>Nabízíme tvorbu moderních webových stránek a aplikací.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Moje stránka. Všechna práva vyhrazena.</p>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script>
+            drawPieChart(365, 350);
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přidat surovinu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PKU pomocník</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hlavní strana</a></li>
+                <li><a href="pridatJidlo.html">Přidat jídlo</a></li>
+                <li><a href="databaze.html">Databáze</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+       <main>
+        <section id="add-ingredient">
+            <h2>Přidat surovinu do databáze</h2>
+            <form id="ingredient-form">
+                <div>
+                    <label for="ingredient-name">Název suroviny:</label>
+                    <input type="text" id="ingredient-name" name="ingredient-name" required>
+                </div>
+
+                <div>
+                    <label for="is-dish">Jedná se o hotové jídlo:</label>
+                    <input type="checkbox" id="is-dish" name="is-dish">
+                </div>
+
+                <!-- Skrytá sekce pro přidání surovin do hotového jídla -->
+                <div id="dish-ingredients" style="display: none;">
+                    <h3>Suroviny v hotovém jídle</h3>
+                    <div id="ingredient-list">
+                        <!-- Zde se budou dynamicky přidávat suroviny -->
+                    </div>
+                    <button type="button" id="add-ingredient-button">Přidat další surovinu</button>
+                </div>
+
+                <div>
+                    <label for="quantity">Počet:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+                </div>
+
+                <div>
+                    <label for="unit">Měrná jednotka:</label>
+                    <select id="unit" name="unit" required>
+                        <option value="">Vyberte jednotku</option>
+                        <option value="ks">ks</option>
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                        <option value="l">l</option>
+                        <option value="ml">ml</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="phe">PHE (mg/100g):</label>
+                    <input type="number" id="phe" name="phe" min="0" step="0.1" required>
+                </div>
+
+                <div>
+                    <label for="description">Popis:</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
+
+                <button type="submit">Přidat surovinu</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PKU pomocník. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/scriptNovaReceptura.js"></script>
+</body>
+</html>

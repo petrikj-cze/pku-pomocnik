@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKU pomocník</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <header>
+        <h1>PKU pomocník</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hlavní strana</a></li>
+                <li><a href="pridatJidlo.html">Přidat jídlo</a></li>
+                <li><a href="databaze.html">Databáze</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="add-food">
+            <h2>Přidat jídlo do denního rozpisu</h2>
+            <form id="food-form">
+                <div>
+                    <label for="food-name">Název jídla:</label>
+                    <input type="text" id="food-name" name="food-name" required>
+                </div>
+
+                <div>
+                    <label for="category">Kategorie:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Vyberte kategorii</option>
+                        <option value="zelenina">Zelenina</option>
+                        <option value="ovoce">Ovoce</option>
+                        <option value="pecivo">Pečivo</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="food-item">Jídlo:</label>
+                    <select id="food-item" name="food-item" required>
+                        <option value="">Vyberte jídlo</option>
+                        <option value="mrkev">Mrkev</option>
+                        <option value="jablko">Jablko</option>
+                        <option value="rohlik">Rohlík</option>
+                    </select>
+                </div>
+
+                 <!-- Přidání checkboxů pro suroviny -->
+               
+
+                 <!-- Přidání checkboxů, gramů a PHE pro suroviny -->
+                <div style="display: block;">
+                    <label>Suroviny:</label>
+                    <div class="checkbox-group">
+                        <!-- Cukr -->
+                        <label>
+                            <input type="checkbox" name="ingredient" value="cukr"> Cukr
+                            <input type="number" class="grams-input" placeholder="Gramy" min="0">
+                            <input type="text" class="phe-input" placeholder="PHE (mg)" min="0" readonly>
+                        </label>
+                        <!-- Sůl -->
+                        <label>
+                            <input type="checkbox" name="ingredient" value="sul"> Sůl
+                            <input type="number" class="grams-input" placeholder="Gramy" min="0">
+                            <input type="text" class="phe-input" placeholder="PHE (mg)" min="0" readonly>
+                        </label>
+                        <!-- Olej -->
+                        <label>
+                            <input type="checkbox" name="ingredient" value="olej"> Olej
+                            <input type="number" class="grams-input" placeholder="Gramy" min="0">
+                            <input type="text" class="phe-input" placeholder="PHE (mg)" min="0" readonly>
+                        </label>
+                        <!-- Mouka -->
+                        <label>
+                            <input type="checkbox" name="ingredient" value="mouka"> Mouka
+                            <input type="number" class="grams-input" placeholder="Gramy" min="0">
+                            <input type="text" class="phe-input" placeholder="PHE (mg)" min="0" readonly>
+                        </label>
+                        <!-- Voda -->
+                        <label>
+                            <input type="checkbox" name="ingredient" value="voda"> Voda
+                            <input type="number" class="grams-input" placeholder="Gramy" min="0">
+                            <input type="text" class="phe-input" placeholder="PHE (mg)" min="0" readonly>
+                        </label>
+                        <!-- Droždí -->
+                        <label>
+                            <input type="checkbox" name="ingredient" value="drozdí"> Droždí
+                            <input type="number" class="grams-input" placeholder="Gramy" min="0">
+                            <input type="text" class="phe-input" placeholder="PHE (mg)" min="0" readonly>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div>
+                    <label for="grams">Množství (g):</label>
+                    <input type="number" id="grams" name="grams" min="1" required>
+                </div>
+
+                <div>
+                    <label for="note">Poznámka:</label>
+                    <input type="text" id="note" name="note">
+                </div>
+
+                <div>
+                     <label for="count">Celkem pHe</label>
+                    <input type="text" id="count" name="count" placeholder="0 pHe" disabled>
+                </div>
+
+                <button type="submit">Přidat jídlo</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PKU pomocník. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
