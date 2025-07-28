@@ -53,11 +53,27 @@
           <br />
           <button type="button" @click="pridatDalsiSurovinu">Přidat surovinu</button>
           <br />
-          Celková gramáž uvařeného jídla:
-          <input type="text" v-model="celkovaGramaz" placeholder="uveďte v gramech" />
-          g<br />
+          Celková gramáž uvařeného jídla (g):
+          <input type="text" v-model="celkovaGramaz" placeholder="Gramáž (g)" />
+          <br />
           <h3>Recept jídla {{ nameJidlo }}</h3>
-          <textarea v-model="receptJidla" rows="10" cols="50"></textarea><br />
+          <textarea
+            v-model="receptJidla"
+            rows="10"
+            cols="50"
+            placeholder="Volitelně můžete přidat také recept na vaše jídlo. Může být jen pro vás nebo jej můžete sdílet s ostatními zatrhnutím tlačítka [x]Chci toto jídlo sdílet s ostatními."
+          ></textarea
+          ><br />
+          <div class="sdilet-container">
+            <input
+              type="checkbox"
+              v-model="sdiletJidlo"
+              id="sdiletCheckbox"
+              class="sdiletJidloCheckbox"
+            />
+            <label for="sdiletCheckbox">Sdílet jídlo s ostatními</label>
+          </div>
+          <br />
           <button type="submit">Přidat jídlo</button>
         </fieldset>
       </form>
@@ -99,6 +115,7 @@ export default {
       pheNa100g: 0,
       totalPHE: 0,
       receptJidla: '',
+      sdiletJidlo: false,
     }
   },
   methods: {
@@ -123,6 +140,7 @@ export default {
         celkovaGramazJidla: this.celkovaGramaz,
         pheNa100gJidla: this.pheNa100g,
         receptJidla: this.receptJidla,
+        sdileniReceptu: this.sdiletJidlo,
       })
     },
     pridatDalsiSurovinu() {
@@ -156,13 +174,6 @@ legend {
   margin-bottom: 0.5rem;
 }
 
-label {
-  display: block;
-  font-weight: 500;
-  margin-top: 0.5rem;
-  color: #2c3e50;
-}
-
 .typPolozky {
   display: flex;
   gap: 1rem;
@@ -189,5 +200,12 @@ label {
 .typPolozky button.aktivni {
   background-color: #4caf50;
   color: white;
+}
+
+.sdilet-container {
+  display: flex;
+  align-items: left;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 </style>
