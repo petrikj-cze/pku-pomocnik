@@ -1,35 +1,27 @@
-# pku-pomocnik
+# PKU Pomocnik
 
-This template should help get you started developing with Vue 3 in Vite.
+Webová aplikace pro snadnou správu jídel, surovin a denního přijmu Phe pro děti a rodiče s fenylketonurií.
 
-## Recommended IDE Setup
+## English version bellow
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Funkce
 
-## Customize configuration
+- Správa surovin a jejich Phe hodnot
+- Správa jídel a jejich kombinace z vytvořených surovin
+- Automatizované výpočty Phe na 100g suroviny či jídla
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Instalace a spuštění
 
-## Project Setup
-
-```sh
+```bash
+git clone https://github.com/petrikj-cze/pku-pomocnik.git
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Technologie
 
-```sh
-npm run build
-```
+- Vue 3 + Vite, HTML/CSS
 
-### Lint with [ESLint](https://eslint.org/)
+## Autor
 
-```sh
-npm run lint
-```
+Vytvořil Jaroslav Petřík
