@@ -1,27 +1,27 @@
 <template>
-  <div>
-    <h2>Seznam jídel</h2>
-    <div
-      v-for="(jidlo, index) in jidlaSeznam"
-      :key="index"
-      class="jidlo-box"
-      @click="toggleJidlo(index)"
-    >
-      <h2>Nazev: {{ jidlo.nazevJidla }}</h2>
-      <transition name="expand">
-        <div v-if="expandedIndex === index" class="jidlo-detail">
-          <ul>
-            <li v-for="suroviny in jidlo.surovinyJidla">
-              {{ suroviny.jidloSurovina }} : {{ suroviny.gramaz }} g
-            </li>
-          </ul>
-          <b>Z těchto surovin uvaříte přibližně {{ jidlo.celkovaGramazJidla }} gramů jídla</b><br />
-          <b>Na 100g má toto jídlo {{ jidlo.pheNa100gJidla }} phe</b> <br />
-          <h3>Jak vařit:</h3>
-          <i> {{ jidlo.receptJidla }}</i>
-        </div>
-      </transition>
-    </div>
+  <h2>Seznam jídel</h2>
+
+  <div
+    v-for="(jidlo, index) in jidlaSeznam"
+    :key="index"
+    class="jidlo-box"
+    @click="toggleJidlo(index)"
+  >
+    <h2>Nazev: {{ jidlo.nazevJidla }}</h2>
+    share? : {{ jidlo.sdileniReceptu }}
+    <transition name="expand">
+      <div v-if="expandedIndex === index" class="jidlo-detail">
+        <ul>
+          <li v-for="suroviny in jidlo.surovinyJidla">
+            {{ suroviny.jidloSurovina }} : {{ suroviny.gramaz }} g
+          </li>
+        </ul>
+        <b>Z těchto surovin uvaříte přibližně {{ jidlo.celkovaGramazJidla }} gramů jídla</b><br />
+        <b>Na 100g má toto jídlo {{ jidlo.pheNa100gJidla }} phe</b> <br />
+        <h3>Jak vařit:</h3>
+        <i> {{ jidlo.receptJidla }}</i>
+      </div>
+    </transition>
   </div>
 </template>
 <script>

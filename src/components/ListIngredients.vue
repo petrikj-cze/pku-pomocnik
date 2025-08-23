@@ -1,6 +1,7 @@
 <template>
+  <h2>Seznam surovin</h2>
+
   <div class="seznam-surovin">
-    <h2>Seznam surovin</h2>
     <ul>
       <li v-for="(surovina, index) in surovinySeznam" :key="index">
         {{ surovina.surovinaNazev }}, {{ surovina.phe }}

@@ -1,7 +1,16 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import UserInterface from './UserInterface.vue'
 
-createApp(App).mount('#app')
+import router from './router/index.js'
+import { createPinia } from 'pinia'
 
-createApp(UserInterface).mount('#ui')
+const pinia = createPinia()
+
+const aplikace = createApp(App)
+
+aplikace.use(router)
+aplikace.use(pinia)
+
+aplikace.mount('#app')
+
+//createApp(UserInterface).mount('#ui')

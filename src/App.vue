@@ -1,29 +1,30 @@
 <template>
-  <div>
-    <h1>PKU Pomocník</h1>
-    <div class="hlavni-layout">
-      <AddIngredient
+  <headerGlobal />
+
+  <div class="hlavni-layout">
+    <!-- <AddIngredient
         @pridej-surovinu="aktualizujSuroviny"
         :surovinySeznam="surovinySeznam"
         @pridej-jidlo="pridejNoveJidlo"
       />
 
       <ListIngredients :surovinySeznam="surovinySeznam" @smazat-surovinu="smazatPolozku" />
-      <ListMeals :jidlaSeznam="jidlaSeznam" />
-    </div>
+      <ListMeals :jidlaSeznam="jidlaSeznam" /> -->
+
+    <router-view />
   </div>
+
+  <footerGlobal />
 </template>
 
 <script>
-import AddIngredient from './components/AddIngredient.vue'
-import ListIngredients from './components/ListIngredients.vue'
-import ListMeals from './components/ListMeals.vue'
+import footerGlobal from './components/footer.vue'
+import headerGlobal from './components/header.vue'
 
 export default {
   components: {
-    AddIngredient,
-    ListIngredients,
-    ListMeals,
+    footerGlobal,
+    headerGlobal,
   },
   props: {},
   data() {
@@ -55,37 +56,24 @@ export default {
 
 <style>
 .hlavni-layout {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   padding: 2rem;
   background-color: white;
-  min-height: 100vh;
+  min-height: 500px;
   font-family: 'Segoe UI', sans-serif;
-  color: #2c3e50;
 }
 
-.hlavni-layout > *:nth-child(1) {
-  flex: 2;
+h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  border-radius: 12px;
+  border: 1px solid #3e8e41;
+  color: white;
 }
 
-.hlavni-layout > *:nth-child(2),
-.hlavni-layout > *:nth-child(3) {
-  flex: 1;
-}
-
-@media (max-width: 768px) {
-  .hlavni-layout {
-    flex-direction: column;
-  }
-  .hlavni-layout > * {
-    width: 100%;
-    flex: none;
-  }
-}
-
-/* Obecné styly pro bloky komponent */
-.hlavni-layout > * {
+.hlavni-layout {
+  margin-top: 30px;
   background-color: #f5fdf8;
   padding: 1.5rem;
   border-radius: 12px;
@@ -97,6 +85,10 @@ export default {
 h1,
 h2 {
   color: #3e8e41; /* Vue zelená */
+}
+
+.pageHeader {
+  background-color: #2f6e31;
 }
 
 /* Tlačítka */
@@ -123,5 +115,9 @@ select {
   border: 1px solid #cce7d0;
   border-radius: 6px;
   font-size: 1rem;
+}
+
+nav {
+  margin-left: 2rem;
 }
 </style>

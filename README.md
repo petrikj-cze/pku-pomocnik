@@ -9,6 +9,7 @@ Webová aplikace pro snadnou správu jídel, surovin a denního přijmu Phe pro 
 - Správa surovin a jejich Phe hodnot
 - Správa jídel a jejich kombinace z vytvořených surovin
 - Automatizované výpočty Phe na 100g suroviny či jídla
+- Tvorba receptáře a jeho sdílení s ostatními uživateli
 
 ## Instalace a spuštění
 
@@ -20,7 +21,7 @@ npm run dev
 
 ## Technologie
 
-- Vue 3 + Vite, HTML/CSS
+- Vue 3 + Vite + Pinia, HTML/CSS
 
 ## Autor
 
@@ -48,7 +49,7 @@ npm run dev
 
 ## Technologies
 
-    Vue 3 + Vite, HTML/CSS
+    Vue 3 + Vite + Pinia, HTML/CSS
 
 ## Author
 

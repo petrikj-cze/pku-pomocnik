@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>Přidat surovinu</h2>
     <div class="typPolozky">
       <button
         @click="typPolozkySelect = 'jidlo'"
@@ -18,7 +17,7 @@
     <div v-show="typPolozkySelect === 'surovina'">
       <form @submit.prevent="formPridatSurovinu">
         <fieldset v-show="typPolozkySelect === 'surovina'">
-          <legend>Surovina</legend>
+          <legend>Přidat surovinu</legend>
           <label>Název:</label>
           <input v-model="nameSurovina" />
 
@@ -33,7 +32,7 @@
     <div v-show="typPolozkySelect === 'jidlo'">
       <form @submit.prevent="formPridatJidlo">
         <fieldset>
-          <legend>Jídlo</legend>
+          <legend>Přidat jídlo</legend>
           <input v-model="nameJidlo" /><br />
           <div v-for="(polozka, index) in surovinyJidla" :key="index">
             <select v-model="polozka.jidloSurovina">
