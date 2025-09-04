@@ -2,26 +2,37 @@
   <div class="header">
     <img :src="logo" class="pku-pomocnik-logo" />
   </div>
-  <nav>
-    <router-link to="/"
-      ><button><b>Denní přehled</b></button> </router-link
-    >&nbsp;
-    <router-link to="/add-ingredient"
-      ><button><b>Přidat položku</b></button> </router-link
-    >&nbsp; <router-link to="/list-ingredients"><button>Seznam surovin</button></router-link>&nbsp;
-    <router-link to="/list-meals"><button>Seznam jídel</button></router-link>&nbsp;
-    <router-link to="/user-profile"
-      ><button class="alternativeButton">Uživatelský profil</button></router-link
-    >&nbsp;
-    <router-link to="/about"><button class="alternativeButton">O aplikaci</button></router-link
-    >&nbsp;
+  <nav class="mainmenu">
+    <router-link v-if="userStore.isLogged === true" to="/day-view"
+      ><button><b>DENNÍ PŘEHLED</b></button>
+    </router-link>
+    <router-link v-if="userStore.isLogged === false" to="/"
+      ><button><b>Domů</b></button>
+    </router-link>
+    <router-link v-if="userStore.isLogged === true" to="/add-ingredient"
+      ><button><b>Přidat položku</b></button>
+    </router-link>
+    <router-link v-if="userStore.isLogged === true" to="/list-ingredients"
+      ><button>Seznam surovin</button></router-link
+    >
+
+    <router-link v-if="userStore.isLogged === true" to="/list-meals"
+      ><button>Seznam jídel</button></router-link
+    >
+    <router-link to="/about"><button class="alternativeButton">O aplikaci</button></router-link>
     <router-link to="/about-pku"
       ><button class="alternativeButton">O fenylketonurii</button></router-link
-    >&nbsp;
+    ><router-link v-if="userStore.isLogged === true" to="/user-profile"
+      ><button class="alternativeButton">Uživatelský profil</button></router-link
+    ><router-link v-if="userStore.isLogged === false" to="/user-interface"
+      ><button class="alternativeButton">Přihlásit</button></router-link
+    >
   </nav>
 </template>
 <script setup>
 import logo from '@/assets/header.png'
+import { useUserStore } from '@/stores/user-state'
+const userStore = useUserStore()
 </script>
 <style>
 .header {
@@ -47,5 +58,9 @@ import logo from '@/assets/header.png'
 }
 nav {
   margin-top: 30px;
+}
+
+.mainmenu button {
+  margin-left: 10px;
 }
 </style>

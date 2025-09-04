@@ -21,7 +21,7 @@ npm run dev
 
 ## Technologie
 
-- Vue 3 + Vite + Pinia, HTML/CSS
+- Vue 3 + Vite + Pinia + Router + FormKit, HTML/CSS
 
 ## Autor
 
@@ -49,7 +49,7 @@ npm run dev
 
 ## Technologies
 
-    Vue 3 + Vite + Pinia, HTML/CSS
+- Vue 3 + Vite + Pinia + Router + FormKit, HTML/CSS
 
 ## Author
 

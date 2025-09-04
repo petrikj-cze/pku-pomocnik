@@ -2,30 +2,30 @@
   <h2>Seznam surovin</h2>
 
   <div class="seznam-surovin">
-    <ul>
+    <!-- <ul>
       <li v-for="(surovina, index) in surovinySeznam" :key="index">
         {{ surovina.surovinaNazev }}, {{ surovina.phe }}
         <button @click="smazPolozku(index)">Smazat</button>
       </li>
     </ul>
+
+-->
+    <ul>
+      <li v-for="(surovina, index) in ingredientsStore.surovinySeznam" :key="index">
+        <span class="liSurovinaNazev">{{ surovina.surovinaNazev }}</span
+        ><span class="liSurovinaPhe">{{ surovina.phe }} mg Phe</span
+        ><span class="liButton"><button>Upravit</button></span
+        ><span class="liButton"
+          ><button @click="ingredientsStore.smazatSurovinu(index)">Smazat surovinu</button></span
+        >
+      </li>
+    </ul>
   </div>
 </template>
 
-<script>
-export default {
-  emits: ['smazat-surovinu'],
-  props: {
-    surovinySeznam: {
-      type: Array,
-      required: true,
-    },
-  },
-  methods: {
-    smazPolozku(index) {
-      this.$emit('smazat-surovinu', index)
-    },
-  },
-}
+<script setup>
+import { useIngredientsStore } from '@/stores/ingredients'
+const ingredientsStore = useIngredientsStore()
 </script>
 
 <style lang="css" scoped>
@@ -50,8 +50,6 @@ export default {
   font-size: 1rem;
   background-color: #e8f5e9; /* světle zelená */
   display: flex;
-  justify-content: space-between;
-  align-items: left;
   margin-top: 0.25rem;
 }
 
@@ -73,5 +71,21 @@ export default {
 
 .seznam-surovin button:hover {
   background-color: #ffebee;
+}
+
+.liSurovinaNazev {
+  min-width: 300px;
+  font-weight: bold;
+  background-color: white;
+}
+
+.liSurovinaPhe {
+  width: 150px;
+  background-color: #d32f2f;
+}
+
+.liButton {
+  width: 140px;
+  background-color: aqua;
 }
 </style>

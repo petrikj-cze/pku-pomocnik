@@ -15,7 +15,7 @@
       </button>
     </div>
     <div v-show="typPolozkySelect === 'surovina'">
-      <form @submit.prevent="formPridatSurovinu">
+      <!--<form @submit.prevent="formPridatSurovinu">
         <fieldset v-show="typPolozkySelect === 'surovina'">
           <legend>Přidat surovinu</legend>
           <label>Název:</label>
@@ -25,12 +25,16 @@
           <input v-model.number="phe" type="number" />
           <button type="submit">Přidat</button>
         </fieldset>
-      </form>
+      </form>-->
+      <FormKit type="form" submit-label="Přidat">
+        <FormKit type="text" label="Název suroviny" name="nazevSuroviny" id="nazevSuroviny" />
+        <FormKit type="number" label="PHE (mg)" name="surovinaphe" id="surovinaphe" />
+      </FormKit>
     </div>
 
     <!-- Přidání jídla -->
     <div v-show="typPolozkySelect === 'jidlo'">
-      <form @submit.prevent="formPridatJidlo">
+      <!--<form @submit.prevent="formPridatJidlo">
         <fieldset>
           <legend>Přidat jídlo</legend>
           <input v-model="nameJidlo" /><br />
@@ -75,7 +79,8 @@
           <br />
           <button type="submit">Přidat jídlo</button>
         </fieldset>
-      </form>
+      </form>-->
+      <FormKit type="form" submit-label="Přidat"> </FormKit>
     </div>
     <div v-if="pridano === 'ano'">
       <h2>
